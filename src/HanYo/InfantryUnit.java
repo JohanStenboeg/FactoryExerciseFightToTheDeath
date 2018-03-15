@@ -1,27 +1,34 @@
 package HanYo;
 
 public abstract class InfantryUnit {
-    int range = 0;
-    int armor = 0;
-    int hps = 0;
-    int health = 0;
-    int ats = 0;
+    double range = 0;
+    double armor = 0;
+    double atd = 0;
+    double health = 0;
+    double ats = 0;
 
-    public InfantryUnit(int range, int armor, int hps, int health, int ats){
+    public InfantryUnit( double range, double armor, double atd, double health, double ats){
         this.range = range;
         this.armor = armor;
-        this.hps = hps;
+        this.atd = atd;
         this.health = health;
         this.ats = ats;
 
     }
-    public void takeDamage(int hps){
-        int damageReduction = (armor/100)*10;
-        hps = hps - damageReduction;
+    public void takeDamage(double atd){
+        double damageReduction = (armor/100)*10;
+        atd = atd - damageReduction;
+        health = health - atd;
+        System.out.println(InfantryUnit.this + " took " + atd + " damage" );
+        if(health >= 0.0){
+            System.out.println(InfantryUnit.this + " Died");
+        }
     }
 
     public void attack(InfantryUnit unit){
-        int attackDamage = ats*hps;
+        double attackDamage = ats* atd;
         unit.takeDamage(attackDamage);
+        System.out.println(InfantryUnit.this + " attacked for " + attackDamage);
     }
+
 }

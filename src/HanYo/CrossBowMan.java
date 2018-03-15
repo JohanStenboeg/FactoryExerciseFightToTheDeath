@@ -7,7 +7,7 @@ public class CrossBowMan extends InfantryUnit {
     }
 
     public CrossBowMan(){
-        super(200, 150, 175, 75, 0.5);
+        super(200, 100, 175, 200, 0.5);
         System.out.println("CrossBowMan Spawned");
     }
 }

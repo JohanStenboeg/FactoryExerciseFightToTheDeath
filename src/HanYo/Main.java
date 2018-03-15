@@ -8,12 +8,16 @@ public class Main {
         RockHauler R1 = new RockHauler();
         CrossBowMan CBM1 = new CrossBowMan();
 
-        while(CBM1.health >= 0.0){
+
+        while (CBM1.health >= 0.0 && A1.health >= 0.0)
+        if (CBM1.health >= 0.0 && A1.health >= 0.0) {
             A1.attack(CBM1);
-            CBM1.takeDamage(A1.atd);
+        } else System.out.println("Good Fight!");
+        if (A1.health >= 0.0 && CBM1.health >= 0.0) {
             CBM1.attack(A1);
-            A1.takeDamage(CBM1.atd);
-        }
+        } else System.out.println("Good Fight!");
+        System.out.println(A1.health);
+        System.out.println(CBM1.health);
 
 
 

@@ -6,7 +6,7 @@ public class Archer extends InfantryUnit {
         super(range, armor, atd, health, ats);
     }
     public Archer() {
-        super(250, 150, 150, 50, 1);
+        super(250, 100, 150, 200, 1);
         System.out.println("Archer Spawned");
     }
 
